@@ -19,9 +19,7 @@ public class ChooseSort extends SortTestBase {
                 }
             }
             if(maxIndex != dataList.length - i - 1) {
-                int temp = dataList[maxIndex];
-                dataList[maxIndex] = dataList[dataList.length - i - 1];
-                dataList[dataList.length - i - 1] = temp;
+                swap(dataList, maxIndex, dataList.length - i - 1);
             }
         }
     }

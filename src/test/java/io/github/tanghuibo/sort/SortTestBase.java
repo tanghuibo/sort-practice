@@ -3,7 +3,6 @@ package io.github.tanghuibo.sort;
 import org.junit.Assert;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -17,6 +16,12 @@ public abstract class SortTestBase {
     abstract public void sort(int[] dataList);
 
 
+    protected void swap(int[] dataList, int indexA, int indexB) {
+        int temp = dataList[indexA];
+        dataList[indexA] = dataList[indexB];
+        dataList[indexB] = temp;
+    }
+
     public void check() {
         for (int i = 0; i < 100; i++) {
             check_();
@@ -24,7 +29,7 @@ public abstract class SortTestBase {
     }
     private void check_() {
         Random random = new Random();
-        int dataListLength = 100;
+        int dataListLength = random.nextInt(100) + 10;
         int[] dataList1 = new int[dataListLength];
         int[] dataList2 = new int[dataListLength];
         for (int i = 0; i < dataListLength; i++) {
@@ -40,7 +45,7 @@ public abstract class SortTestBase {
 
     }
 
-    private String toResult(List<Integer> dataList) {
+    public String toResult(int[] dataList) {
         StringBuilder sb = new StringBuilder();
         for (Integer data : dataList) {
             sb.append(data);

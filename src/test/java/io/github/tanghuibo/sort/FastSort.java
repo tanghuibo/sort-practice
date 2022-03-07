@@ -20,9 +20,7 @@ public class FastSort extends SortTestBase {
         }
         if(dataList.length == 2) {
             if(dataList[1] < dataList[0]) {
-                int temp = dataList[1];
-                dataList[1] = dataList[0];
-                dataList[0] = temp;
+                swap(dataList, 0, 1);
             }
             return;
         }

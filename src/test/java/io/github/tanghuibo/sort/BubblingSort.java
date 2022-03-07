@@ -14,9 +14,7 @@ public class BubblingSort extends SortTestBase{
         for (int i = 0; i < dataList.length; i++) {
             for (int j = 1; j < dataList.length - i; j++) {
                 if(dataList[j] < dataList[j - 1]) {
-                    int temp = dataList[j];
-                    dataList[j] = dataList[j - 1];
-                    dataList[j - 1] = temp;
+                    swap(dataList, j, j - 1);
                 }
             }
         }

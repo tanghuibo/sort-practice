@@ -16,9 +16,7 @@ public class InsertSort extends SortTestBase {
                 if(dataList[j] >= dataList[j - 1]) {
                     break;
                 }
-                int temp = dataList[j];
-                dataList[j] = dataList[j - 1];
-                dataList[j - 1] = temp;
+                swap(dataList, j, j - 1);
             }
         }
     }
